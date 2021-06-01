@@ -11,7 +11,14 @@ const NewTodo: React.FC<newTodoProps> = ({ onAddTodo }) => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const enteredText = textInputRef.current!.value;
+
+        if (!enteredText.trim()) {
+            return textInputRef.current?.focus();
+        }
+
         onAddTodo(enteredText);
+        textInputRef.current!.value = "";
+        textInputRef.current?.focus();
     };
 
     return (
@@ -23,6 +30,7 @@ const NewTodo: React.FC<newTodoProps> = ({ onAddTodo }) => {
                     type="text"
                     name="todo-text"
                     id="todo-text"
+                    required
                 />
             </div>
             <button type="submit">Add Todo</button>

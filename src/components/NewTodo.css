@@ -16,17 +16,22 @@ input {
 
 label {
     font-weight: bold;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin-bottom: 0.5rem;
 }
 
 input {
     font: inherit;
     border: 1px solid #ccc;
-    padding: 0.25rem;
+    padding: 0.6rem 1rem;
+    transition: all 300ms ease-in-out;
+    caret-color: #50005a;
 }
 
 input:focus {
     outline: none;
     border-color: #50005a;
+    border-radius: 3px;
 }
 
 button {
